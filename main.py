@@ -11,6 +11,16 @@ Python supports several built-in data types:
 """
 #  Var types and Assignments
 """
+print('Welcome to Python Learning')
+a = 80
+b = 10
+if a<b:
+    print('a is lessear than b')
+else:
+    print('a is greater than b')
+"""
+
+"""
 age = 30
 salary = 25.34
 name = 'Vijay Jetti'
@@ -38,16 +48,16 @@ secondNumber = input('Please enter your second number: ')
 
 print(name)
 print(type(firstNumber), ':', firstNumber)
+print(firstNumber+secondNumber)
 print('Sum of Numbers:', int(firstNumber) + int(secondNumber))
 
 """
 # Escape Sequence
 """
-print('Hello Vijay', "\nHow are you")
+print('Hello Vijay', '\nHow are you')
 print('Hello Vijay', "\tHow are you")
-print('Hello Vijay', "How are you", sep=' || ', end=' && ')
+print('Hello Vijay', "How are you", 'What are you doing', sep=' || ' , end=' && ')
 print('End of escape chars')
-
 """
 """
 # Arithmatic Operators
@@ -70,9 +80,10 @@ print(a)
 # Membership Operators // in and not in
 fruits =['banana','apple','mango','guava']
 print('banana' in fruits, 'kiwi' in fruits, 'kiwi' not in fruits)
-# fruits.remove('apple')
-# fruits.append('kiwi')
-# print(fruits)
+fruits.remove('apple')
+fruits.append('kiwi')
+print('Count: ',fruits.count)
+print(fruits)
 
 # Identify Operators is, is not
 x=15
@@ -108,11 +119,22 @@ match lucky:
 """
 """
 # Print a table
-tabel = int(input('Please enter your table number: '))
+# count = int(input('Please enter your table number: '))
 for i in range(1, 11):
-    print(tabel,'X',i,'=',tabel*i)
+    # print(count,'X',i,'=',count*i)
+    for j in range(1, 11):
+        print(f'{i} X {j} = {i*j}')
+    print(f'================================')    
     
 """
+"""
+fruits =['banana','apple','mango','guava']
+for fruit in fruits:
+    print(fruit)
+
+for number in range(11):
+    print(number)
+"""    
 # While loop
 """
 #  print 1-10 numbers using While Loop
@@ -158,7 +180,7 @@ print(text.upper())
 print(text.lower())
 print(text.title()) # Each word would be capital
 print(text.capitalize()) # First char would be capital
-print(text.swapcase())
+print('Swapcase: ',text.swapcase())
 print(text.find('Python')) # Finds at char index
 print(text.count('Python'))
 print(text.replace('Python','Java'))
@@ -169,6 +191,7 @@ print(name.strip())
 print(name.lstrip())
 print(name.rstrip())
 print('My name is {} and I am {} years old'.format(name, age))
+print(f'My name is {name.strip()} and I am {age} yrs old handsome')
 """
 # String Common functions
 """
@@ -180,14 +203,50 @@ print(text.isidentifier())
 print(text.isspace())
 print(text.istitle())
 print(len(text))
+# Multi line strings 
+language ='''
+Python is 
+required to start
+any AI 
+'''
+print(language)
 """
 # Functions and Modules
 """
-def add(a,b, default=4):
-    return a+b+default
+def greet(name):
+    print(f'Welcome {name} to functions in Python')
+    return f'Hello {name}, Welcome to Python Learning'
+print(greet('Vijay'))
+
+def add(a,b):
+    return a+b
 print('Sum of two numbers:', add(2, 5))
 print(f'sum value {add(9, 4)}')
-print(f'sum value {add(b=4, a=5,default=6)}')
+print(f'sum value {add(b=4, a=5)}')
+
+# Default Arguments
+def greet(name='Guest'):
+    return f'Hello {name}'
+print(greet('Vijay'))
+print(greet())
+
+# Keyword Arguments
+def student(name, age):
+    return f'{name} is {age} years old'
+print(student('Guna', 23))
+print(student(age=13, name='Lucky'))
+
+# Lambda Functions
+square = lambda x: x ** 2
+print(square(5))
+
+qube = lambda x: x ** 3
+print(qube(3))
+
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = list(map(lambda x: x ** 2, numbers))
+print(squared_numbers)
+
 """
 # Fibonacci Numbers
 """
@@ -198,7 +257,53 @@ def fibonacci(number):
         return fibonacci(number-2) + fibonacci(number-1)
 print(fibonacci(6))
 """
+"""
 import math
 print(math.sqrt(100))
 print(math.pow(4,3))
 print(math.pow(10,2))
+print('Resuming of Learning')
+"""
+
+# Modules and Packages
+"""
+import math
+
+print(math.sqrt(100))
+print(math.pow(4,3))
+print(math.pow(10,2))   
+
+"""
+"""
+# Lists and List Methods
+# Lists are ordered, mutable collections of items. They can contain elements of different data types, including other lists.
+numbers = [10, 20, 30, 40, 50]
+numbers.append(60)  # Add an element to the end of the list
+print(numbers)
+numbers.insert(3, 70)  # Insert an element at a specific index
+print(numbers) 
+numbers.remove(30)  # Remove the first occurrence of an element
+print(numbers)
+numbers.pop()  # Remove and return the last element
+print(numbers)
+numbers.pop(2)  # Remove and return the element at a specific index
+print(numbers)
+print(numbers.index(20))  # Get the index of the first occurrence of an element
+print(numbers.count(2))  # Count the occurrences of an element
+numbers.sort()  # Sort the list in ascending order
+print(numbers)
+numbers.sort(reverse=True)  # Sort the list in descending order
+print(numbers)
+numbers.reverse()  # Reverse the order of the list
+print(numbers) 
+"""
+# List Comprehensions
+# List comprehensions provide a concise way to create lists. 
+# They consist of brackets containing an expression followed by a for clause, 
+# and optionally, one or more if clauses.
+"""
+squared_numbers = [x ** 2 for x in range(1, 11)]
+print(squared_numbers)
+even_numbers = [x for x in range(1, 11) if x % 2 == 0]
+print(even_numbers)
+"""
